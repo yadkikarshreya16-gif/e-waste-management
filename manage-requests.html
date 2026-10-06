@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Manage Requests | E-Waste Management</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+
+        <div class="logo">
+            ♻️ E-Waste
+        </div>
+
+        <div class="nav-links">
+            <a href="admin-dashboard.html">Dashboard</a>
+            <a href="manage-users.html">Users</a>
+            <a href="manage-collectors.html">Collectors</a>
+            <a href="manage-requests.html">Requests</a>
+            <a href="reports.html">Reports</a>
+            <a href="login.html">Logout</a>
+        </div>
+
+    </nav>
+
+
+    <!-- Manage Requests -->
+    <main class="admin-page">
+
+        <div class="page-header">
+
+            <div>
+                <p class="tagline">📦 REQUEST MANAGEMENT</p>
+
+                <h1>Manage Pickup Requests</h1>
+
+                <p>
+                    Review, assign and monitor e-waste pickup requests.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- Request Statistics -->
+        <section class="admin-stats">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📦
+                </div>
+
+                <div>
+                    <p>Total Requests</p>
+                    <h2 id="requestCount">0</h2>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🕒
+                </div>
+
+                <div>
+                    <p>Pending</p>
+                    <h2 id="pendingRequests">0</h2>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🚚
+                </div>
+
+                <div>
+                    <p>Assigned</p>
+                    <h2 id="assignedRequests">0</h2>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ♻️
+                </div>
+
+                <div>
+                    <p>Recycled</p>
+                    <h2 id="recycledRequests">0</h2>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Search and Filters -->
+        <section class="admin-section">
+
+            <div class="admin-toolbar">
+
+                <div class="search-group">
+
+                    <label for="requestSearch">
+                        Search Requests
+                    </label>
+
+                    <input
+                        type="search"
+                        id="requestSearch"
+                        placeholder="Search by request ID, user or e-waste type"
+                    >
+
+                </div>
+
+
+                <div class="filter-group">
+
+                    <label for="requestStatusFilter">
+                        Status
+                    </label>
+
+                    <select id="requestStatusFilter">
+
+                        <option value="all">
+                            All Requests
+                        </option>
+
+                        <option value="pending">
+                            Pending
+                        </option>
+
+                        <option value="assigned">
+                            Assigned
+                        </option>
+
+                        <option value="accepted">
+                            Accepted
+                        </option>
+
+                        <option value="collected">
+                            Collected
+                        </option>
+
+                        <option value="sent-for-recycling">
+                            Sent for Recycling
+                        </option>
+
+                        <option value="recycled">
+                            Recycled
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="filter-group">
+
+                    <label for="requestTypeFilter">
+                        E-Waste Type
+                    </label>
+
+                    <select id="requestTypeFilter">
+
+                        <option value="all">
+                            All Types
+                        </option>
+
+                        <option value="mobile">
+                            Mobile Phone
+                        </option>
+
+                        <option value="laptop">
+                            Laptop
+                        </option>
+
+                        <option value="monitor">
+                            Monitor
+                        </option>
+
+                        <option value="keyboard">
+                            Keyboard
+                        </option>
+
+                        <option value="mouse">
+                            Mouse
+                        </option>
+
+                        <option value="battery">
+                            Battery
+                        </option>
+
+                        <option value="charger">
+                            Charger
+                        </option>
+
+                        <option value="printer">
+                            Printer
+                        </option>
+
+                        <option value="other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Requests Table -->
+        <section class="admin-section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Pickup Requests</h2>
+
+                    <p>
+                        Review and manage all e-waste pickup requests.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Request ID</th>
+                            <th>User</th>
+                            <th>E-Waste</th>
+                            <th>Quantity</th>
+                            <th>Pickup Date</th>
+                            <th>Collector</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="requestsTable">
+
+                        <tr>
+                            <td colspan="8" class="empty-state">
+                                No pickup requests yet.
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- Request Status Flow -->
+        <section class="admin-section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Request Status Flow</h2>
+
+                    <p>
+                        The standard lifecycle of an e-waste pickup request.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="pickup-flow">
+
+                <div class="flow-step">
+
+                    <span>🕒</span>
+
+                    <div>
+                        <strong>Pending</strong>
+                        <p>Request submitted by user.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="flow-arrow">
+                    →
+                </div>
+
+
+                <div class="flow-step">
+
+                    <span>🚚</span>
+
+                    <div>
+                        <strong>Assigned</strong>
+                        <p>Collector assigned by admin.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="flow-arrow">
+                    →
+                </div>
+
+
+                <div class="flow-step">
+
+                    <span>📦</span>
+
+                    <div>
+                        <strong>Collected</strong>
+                        <p>E-waste collected from user.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="flow-arrow">
+                    →
+                </div>
+
+
+                <div class="flow-step">
+
+                    <span>♻️</span>
+
+                    <div>
+                        <strong>Recycled</strong>
+                        <p>E-waste successfully recycled.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 E-Waste Management System
+        </p>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Requests | E-Waste Management</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+
+        <div class="logo">
+            ♻️ E-Waste
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="submit.html">Submit E-Waste</a>
+            <a href="my-requests.html">My Requests</a>
+            <a href="rewards.html">Rewards</a>
+            <a href="profile.html">Profile</a>
+            <a href="login.html">Logout</a>
+        </div>
+
+    </nav>
+
+
+    <!-- My Requests -->
+    <main class="requests-page">
+
+        <div class="page-header">
+
+            <div>
+                <p class="tagline">♻️ MY E-WASTE REQUESTS</p>
+
+                <h1>My Pickup Requests</h1>
+
+                <p>
+                    View and track the status of your e-waste pickup requests.
+                </p>
+            </div>
+
+            <a href="submit.html" class="dashboard-add-btn">
+                + New Request
+            </a>
+
+        </div>
+
+
+        <!-- Requests Table -->
+        <section class="requests-section">
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Request ID</th>
+                            <th>E-Waste Item</th>
+                            <th>Quantity</th>
+                            <th>Pickup Date</th>
+                            <th>Location</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="requestsTable">
+
+                        <tr>
+                            <td colspan="7" class="empty-state">
+                                No pickup requests yet.
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- Status Information -->
+        <section class="status-info">
+
+            <h2>Request Status</h2>
+
+            <div class="status-grid">
+
+                <div class="status-card">
+                    <span>🕒</span>
+                    <div>
+                        <h3>Pending</h3>
+                        <p>Request is waiting for processing.</p>
+                    </div>
+                </div>
+
+                <div class="status-card">
+                    <span>🚚</span>
+                    <div>
+                        <h3>Assigned</h3>
+                        <p>A collector has been assigned.</p>
+                    </div>
+                </div>
+
+                <div class="status-card">
+                    <span>📦</span>
+                    <div>
+                        <h3>Collected</h3>
+                        <p>Your e-waste has been collected.</p>
+                    </div>
+                </div>
+
+                <div class="status-card">
+                    <span>♻️</span>
+                    <div>
+                        <h3>Recycled</h3>
+                        <p>Your e-waste has been sent for recycling.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 E-Waste Management System
+        </p>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

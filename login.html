@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | E-Waste Management</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+
+        <div class="logo">
+            ♻️ E-Waste
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="submit.html">Submit E-Waste</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+        </ul>
+
+    </nav>
+
+
+    <!-- Login Section -->
+    <section class="login-section">
+
+        <div class="login-container">
+
+            <div class="login-header">
+                <h1>Welcome Back</h1>
+                <p>Login to your E-Waste Management account</p>
+            </div>
+
+
+            <form id="loginForm">
+
+                <!-- Role -->
+                <div class="form-group">
+
+                    <label for="role">Login As</label>
+
+                    <select id="role" name="role" required>
+
+                        <option value="">Select Role</option>
+
+                        <option value="user">
+                            User
+                        </option>
+
+                        <option value="collector">
+                            Collector
+                        </option>
+
+                        <option value="admin">
+                            Officer / Admin
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Email -->
+                <div class="form-group">
+
+                    <label for="email">Email / User ID</label>
+
+                    <input
+                        type="text"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email or user ID"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Password -->
+                <div class="form-group">
+
+                    <label for="password">Password</label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Remember Me -->
+                <div class="login-options">
+
+                    <label class="remember-me">
+
+                        <input type="checkbox" id="remember">
+
+                        Remember me
+
+                    </label>
+
+                    <a href="#" class="forgot-password">
+                        Forgot Password?
+                    </a>
+
+                </div>
+
+
+                <!-- Login Button -->
+                <button type="submit" class="login-btn">
+                    Login
+                </button>
+
+            </form>
+
+
+            <!-- Register -->
+            <div class="register-link">
+
+                <p>
+                    Don't have a User account?
+                    <a href="register.html">Create Account</a>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 E-Waste Management System
+        </p>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

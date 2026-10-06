@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Submit E-Waste | Smart E-Waste Management</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+
+        <div class="logo">
+            ♻️ E-Waste
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="submit.html">Submit E-Waste</a>
+            <a href="dashboard.html">Dashboard</a>
+        </div>
+
+    </nav>
+
+
+    <!-- Submission Section -->
+
+    <section class="submission-section">
+
+        <div class="form-container">
+
+            <div class="form-heading">
+
+                <p class="tagline">♻️ RESPONSIBLE RECYCLING</p>
+
+                <h1>Submit Your E-Waste</h1>
+
+                <p>
+                    Enter the details of your electronic waste
+                    so it can be properly managed and recycled.
+                </p>
+
+            </div>
+
+
+            <!-- E-Waste Form -->
+
+            <form id="ewasteForm">
+
+                <!-- Name -->
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Email -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- E-Waste Type -->
+
+                <div class="form-group">
+
+                    <label for="wasteType">
+                        E-Waste Type
+                    </label>
+
+                    <select id="wasteType" name="wasteType" required>
+
+                        <option value="">
+                            Select e-waste type
+                        </option>
+
+                        <option value="Mobile Phone">
+                            📱 Mobile Phone
+                        </option>
+
+                        <option value="Laptop">
+                            💻 Laptop
+                        </option>
+
+                        <option value="Computer">
+                            🖥️ Computer
+                        </option>
+
+                        <option value="Monitor">
+                            🖥️ Monitor
+                        </option>
+
+                        <option value="Keyboard">
+                            ⌨️ Keyboard
+                        </option>
+
+                        <option value="Mouse">
+                            🖱️ Mouse
+                        </option>
+
+                        <option value="Printer">
+                            🖨️ Printer
+                        </option>
+
+                        <option value="Battery">
+                            🔋 Battery
+                        </option>
+
+                        <option value="Charger">
+                            🔌 Charger
+                        </option>
+
+                        <option value="Other">
+                            📦 Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Quantity -->
+
+                <div class="form-group">
+
+                    <label for="quantity">
+                        Quantity
+                    </label>
+
+                    <input
+                        type="number"
+                        id="quantity"
+                        name="quantity"
+                        min="1"
+                        placeholder="Enter quantity"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Condition -->
+
+                <div class="form-group">
+
+                    <label for="condition">
+                        Condition
+                    </label>
+
+                    <select id="condition" name="condition" required>
+
+                        <option value="">
+                            Select condition
+                        </option>
+
+                        <option value="Working">
+                            Working
+                        </option>
+
+                        <option value="Partially Working">
+                            Partially Working
+                        </option>
+
+                        <option value="Not Working">
+                            Not Working
+                        </option>
+
+                        <option value="Damaged">
+                            Damaged
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Location -->
+
+                <div class="form-group">
+
+                    <label for="location">
+                        Location
+                    </label>
+
+                    <input
+                        type="text"
+                        id="location"
+                        name="location"
+                        placeholder="Enter your city / area"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Description -->
+
+                <div class="form-group">
+
+                    <label for="description">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="description"
+                        name="description"
+                        rows="5"
+                        placeholder="Describe the e-waste item..."
+                    ></textarea>
+
+                </div>
+
+
+                <!-- Image -->
+
+                <div class="form-group">
+
+                    <label for="image">
+                        Upload Image
+                    </label>
+
+                    <input
+                        type="file"
+                        id="image"
+                        name="image"
+                        accept="image/*"
+                    >
+
+                    <small>
+                        Optional: Upload an image of your e-waste.
+                    </small>
+
+                </div>
+
+
+                <!-- Submit -->
+
+                <button
+                    type="submit"
+                    class="submit-btn"
+                >
+                    ♻️ Submit E-Waste
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 Smart E-Waste Management System
+        </p>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

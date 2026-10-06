@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profile | E-Waste Management</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+
+        <div class="logo">
+            ♻️ E-Waste
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="submit.html">Submit E-Waste</a>
+            <a href="my-requests.html">My Requests</a>
+            <a href="rewards.html">Rewards</a>
+            <a href="profile.html">Profile</a>
+            <a href="login.html">Logout</a>
+        </div>
+
+    </nav>
+
+
+    <!-- Profile Page -->
+    <main class="profile-page">
+
+        <div class="page-header">
+
+            <div>
+                <p class="tagline">👤 ACCOUNT PROFILE</p>
+
+                <h1>My Profile</h1>
+
+                <p>
+                    View and manage your account information.
+                </p>
+            </div>
+
+        </div>
+
+
+        <section class="profile-layout">
+
+            <!-- Profile Summary -->
+            <div class="profile-card profile-summary-card">
+
+                <div class="profile-avatar">
+                    👤
+                </div>
+
+                <h2 id="profileName">User Name</h2>
+
+                <p id="profileEmail">
+                    user@example.com
+                </p>
+
+                <span class="profile-role">
+                    E-Waste User
+                </span>
+
+                <div class="profile-stats">
+
+                    <div>
+                        <strong id="profileRequests">0</strong>
+                        <span>Requests</span>
+                    </div>
+
+                    <div>
+                        <strong id="profilePoints">350</strong>
+                        <span>Points</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Personal Information -->
+            <div class="profile-card">
+
+                <div class="profile-card-header">
+
+                    <div>
+                        <h2>Personal Information</h2>
+
+                        <p>
+                            Your registered account details.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <form id="profileForm">
+
+                    <div class="profile-form-grid">
+
+                        <div class="form-group">
+
+                            <label for="profileFullName">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="profileFullName"
+                                name="fullName"
+                                placeholder="Enter your full name"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="profilePhone">
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="profilePhone"
+                                name="phone"
+                                placeholder="Enter your phone number"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="profileEmailInput">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="profileEmailInput"
+                                name="email"
+                                placeholder="Enter your email"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="profileAddress">
+                                Pickup Address
+                            </label>
+
+                            <textarea
+                                id="profileAddress"
+                                name="address"
+                                rows="3"
+                                placeholder="Enter your pickup address"
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="profile-save-btn"
+                    >
+                        Save Changes
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- Account Information -->
+        <section class="profile-card account-info-card">
+
+            <div class="profile-card-header">
+
+                <div>
+                    <h2>Account Information</h2>
+
+                    <p>
+                        Information about your E-Waste Management account.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="account-info-grid">
+
+                <div class="account-info-item">
+
+                    <span>👤</span>
+
+                    <div>
+                        <p>Account Type</p>
+                        <strong>User</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="account-info-item">
+
+                    <span>🏆</span>
+
+                    <div>
+                        <p>Reward Tier</p>
+                        <strong>Green Citizen</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="account-info-item">
+
+                    <span>♻️</span>
+
+                    <div>
+                        <p>Recycling Status</p>
+                        <strong>Active</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 E-Waste Management System
+        </p>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

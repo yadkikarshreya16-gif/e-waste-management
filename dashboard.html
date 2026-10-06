@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Dashboard | Smart E-Waste Management</title>
+
+<link rel="stylesheet" href="css/style.css">
+```
+
+</head>
+
+<body>
+
+```
+<!-- Navigation -->
+<nav class="navbar">
+
+    <div class="logo">
+        ♻️ E-Waste
+    </div>
+
+    <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="submit.html">Submit E-Waste</a>
+    <a href="my-requests.html">My Requests</a>
+    <a href="rewards.html">Rewards</a>
+    <a href="profile.html">Profile</a>
+    <a href="login.html">Logout</a>
+</div>
+
+</nav>
+
+
+<!-- Dashboard -->
+
+<main class="dashboard">
+
+    <div class="dashboard-header">
+
+        <div>
+            <p class="tagline">♻️ MANAGEMENT DASHBOARD</p>
+
+            <h1>E-Waste Dashboard</h1>
+
+            <p>
+                Monitor and manage electronic waste submissions.
+            </p>
+        </div>
+
+        <a href="submit.html" class="dashboard-add-btn">
+            + Submit E-Waste
+        </a>
+
+    </div>
+
+
+    <!-- Statistics -->
+
+    <section class="stats-grid">
+
+        <div class="stat-card">
+
+            <div class="stat-icon">📦</div>
+
+            <div>
+                <p>Total Submissions</p>
+                <h2 id="totalSubmissions">0</h2>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">♻️</div>
+
+            <div>
+                <p>Items Recycled</p>
+                <h2 id="recycledItems">0</h2>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">🚚</div>
+
+            <div>
+                <p>Pending Collection</p>
+                <h2 id="pendingCollection">0</h2>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">🌱</div>
+
+            <div>
+                <p>Environmental Impact</p>
+                <h2 id="environmentalImpact">0 kg</h2>
+            </div>
+
+        </div>
+
+        <div class="stat-card">
+
+    <div class="stat-icon">🏆</div>
+
+    <div>
+        <p>Reward Points</p>
+        <h2 id="rewardPoints">350</h2>
+    </div>
+
+</div>
+
+    </section>
+
+
+    <!-- Recent Submissions -->
+
+    <section class="recent-section">
+
+        <div class="section-header">
+
+            <div>
+                <h2>Recent Submissions</h2>
+
+                <p>
+                    Latest e-waste entries submitted to the system.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>ID</th>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th>Condition</th>
+                        <th>Location</th>
+                        <th>Status</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="submissionTable">
+
+                    <tr>
+                        <td colspan="6" class="empty-state">
+                            No submissions yet.
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- Quick Actions -->
+
+    <section class="quick-actions">
+
+        <h2>Quick Actions</h2>
+
+        <div class="action-grid">
+
+            <a href="submit.html" class="action-card">
+                <span>♻️</span>
+                <div>
+                    <h3>Submit E-Waste</h3>
+                    <p>Add a new e-waste submission.</p>
+                </div>
+            </a>
+
+
+            <div class="action-card">
+                <span>📊</span>
+                <div>
+                    <h3>View Reports</h3>
+                    <p>Analyze e-waste collection data.</p>
+                </div>
+            </div>
+
+
+            <div class="action-card">
+                <span>🚚</span>
+                <div>
+                    <h3>Manage Collection</h3>
+                    <p>Track collection requests.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- Footer -->
+
+<footer>
+
+    <p>
+        © 2026 Smart E-Waste Management System
+    </p>
+
+</footer>
+
+
+<script src="js/script.js"></script>
+```
+
+</body>
+
+</html>

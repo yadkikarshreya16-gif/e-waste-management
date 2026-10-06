@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Assigned Pickups | E-Waste Management</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+
+        <div class="logo">
+            ♻️ E-Waste
+        </div>
+
+        <div class="nav-links">
+            <a href="collector-dashboard.html">Dashboard</a>
+            <a href="assigned-pickups.html">Assigned Pickups</a>
+            <a href="login.html">Logout</a>
+        </div>
+
+    </nav>
+
+
+    <!-- Assigned Pickups -->
+    <main class="collector-page">
+
+        <div class="page-header">
+
+            <div>
+                <p class="tagline">📦 PICKUP MANAGEMENT</p>
+
+                <h1>Assigned Pickups</h1>
+
+                <p>
+                    View and manage e-waste pickup requests assigned to you.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- Filter Section -->
+        <section class="collector-section pickup-filter">
+
+            <div class="filter-group">
+
+                <label for="statusFilter">
+                    Filter by Status
+                </label>
+
+                <select id="statusFilter">
+
+                    <option value="all">
+                        All Requests
+                    </option>
+
+                    <option value="assigned">
+                        Assigned
+                    </option>
+
+                    <option value="accepted">
+                        Accepted
+                    </option>
+
+                    <option value="collected">
+                        Collected
+                    </option>
+
+                    <option value="recycling">
+                        Sent for Recycling
+                    </option>
+
+                    <option value="recycled">
+                        Recycled
+                    </option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+
+        <!-- Pickup Table -->
+        <section class="collector-section">
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Request ID</th>
+                            <th>User</th>
+                            <th>E-Waste</th>
+                            <th>Quantity</th>
+                            <th>Pickup Date</th>
+                            <th>Location</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="assignedPickupTable">
+
+                        <tr>
+                            <td colspan="8" class="empty-state">
+                                No assigned pickups yet.
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- Status Guide -->
+        <section class="collector-section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Pickup Status Flow</h2>
+
+                    <p>
+                        Follow the request through each collection stage.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="pickup-flow">
+
+                <div class="flow-step">
+
+                    <span>📋</span>
+
+                    <div>
+                        <strong>Assigned</strong>
+                        <p>Admin assigns the request to a collector.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="flow-arrow">
+                    →
+                </div>
+
+
+                <div class="flow-step">
+
+                    <span>✅</span>
+
+                    <div>
+                        <strong>Accepted</strong>
+                        <p>Collector accepts the pickup request.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="flow-arrow">
+                    →
+                </div>
+
+
+                <div class="flow-step">
+
+                    <span>📦</span>
+
+                    <div>
+                        <strong>Collected</strong>
+                        <p>Collector successfully collects the e-waste.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="flow-arrow">
+                    →
+                </div>
+
+
+                <div class="flow-step">
+
+                    <span>♻️</span>
+
+                    <div>
+                        <strong>Recycled</strong>
+                        <p>E-waste reaches the recycling stage.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 E-Waste Management System
+        </p>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

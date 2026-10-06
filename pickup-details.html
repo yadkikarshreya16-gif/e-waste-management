@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pickup Details | E-Waste Management</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+
+        <div class="logo">
+            ♻️ E-Waste
+        </div>
+
+        <div class="nav-links">
+            <a href="collector-dashboard.html">Dashboard</a>
+            <a href="assigned-pickups.html">Assigned Pickups</a>
+            <a href="login.html">Logout</a>
+        </div>
+
+    </nav>
+
+
+    <!-- Pickup Details -->
+    <main class="collector-page">
+
+        <div class="page-header">
+
+            <div>
+                <p class="tagline">📦 PICKUP DETAILS</p>
+
+                <h1>Pickup Request Details</h1>
+
+                <p>
+                    View the pickup information and update its collection status.
+                </p>
+            </div>
+
+            <a href="assigned-pickups.html" class="dashboard-add-btn">
+                ← Back to Pickups
+            </a>
+
+        </div>
+
+
+        <!-- Request Information -->
+        <section class="pickup-details-grid">
+
+            <!-- E-Waste Information -->
+            <div class="collector-section">
+
+                <div class="section-header">
+
+                    <div>
+                        <h2>E-Waste Information</h2>
+
+                        <p>
+                            Details about the item being collected.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="details-list">
+
+                    <div class="detail-row">
+                        <span>Request ID</span>
+                        <strong id="requestId">EW-0001</strong>
+                    </div>
+
+                    <div class="detail-row">
+                        <span>E-Waste Type</span>
+                        <strong id="ewasteType">Laptop</strong>
+                    </div>
+
+                    <div class="detail-row">
+                        <span>Quantity</span>
+                        <strong id="quantity">1</strong>
+                    </div>
+
+                    <div class="detail-row">
+                        <span>Condition</span>
+                        <strong id="condition">Used</strong>
+                    </div>
+
+                    <div class="detail-row">
+                        <span>Description</span>
+                        <strong id="description">
+                            Electronic device for responsible recycling.
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- User Information -->
+            <div class="collector-section">
+
+                <div class="section-header">
+
+                    <div>
+                        <h2>User Information</h2>
+
+                        <p>
+                            Contact and pickup information.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="details-list">
+
+                    <div class="detail-row">
+                        <span>User Name</span>
+                        <strong id="userName">User Name</strong>
+                    </div>
+
+                    <div class="detail-row">
+                        <span>Phone</span>
+                        <strong id="userPhone">+91 XXXXX XXXXX</strong>
+                    </div>
+
+                    <div class="detail-row">
+                        <span>Email</span>
+                        <strong id="userEmail">user@example.com</strong>
+                    </div>
+
+                    <div class="detail-row">
+                        <span>Pickup Address</span>
+                        <strong id="pickupAddress">
+                            User pickup address
+                        </strong>
+                    </div>
+
+                    <div class="detail-row">
+                        <span>Preferred Date</span>
+                        <strong id="pickupDate">Not scheduled</strong>
+                    </div>
+
+                    <div class="detail-row">
+                        <span>Preferred Time</span>
+                        <strong id="pickupTime">Not scheduled</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Current Status -->
+        <section class="collector-section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Current Status</h2>
+
+                    <p>
+                        Current progress of this pickup request.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="current-status">
+
+                <span class="status-badge assigned">
+                    Assigned
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- Update Status -->
+        <section class="collector-section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Update Pickup Status</h2>
+
+                    <p>
+                        Update the request after completing each collection stage.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <form id="pickupStatusForm">
+
+                <div class="status-update-grid">
+
+                    <div class="form-group">
+
+                        <label for="pickupStatus">
+                            New Status
+                        </label>
+
+                        <select id="pickupStatus" name="status" required>
+
+                            <option value="">
+                                Select Status
+                            </option>
+
+                            <option value="accepted">
+                                Accepted
+                            </option>
+
+                            <option value="collected">
+                                Collected
+                            </option>
+
+                            <option value="recycling">
+                                Sent for Recycling
+                            </option>
+
+                            <option value="recycled">
+                                Recycled
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="collectionDate">
+                            Collection Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="collectionDate"
+                            name="collectionDate"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="collectorNotes">
+                        Collector Notes
+                    </label>
+
+                    <textarea
+                        id="collectorNotes"
+                        name="notes"
+                        rows="4"
+                        placeholder="Add notes about the pickup..."
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="profile-save-btn"
+                >
+                    Update Status
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 E-Waste Management System
+        </p>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

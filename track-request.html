@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Track Request | E-Waste Management</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+
+        <div class="logo">
+            ♻️ E-Waste
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="submit.html">Submit E-Waste</a>
+            <a href="my-requests.html">My Requests</a>
+            <a href="rewards.html">Rewards</a>
+            <a href="profile.html">Profile</a>
+            <a href="login.html">Logout</a>
+        </div>
+
+    </nav>
+
+
+    <!-- Track Request -->
+    <main class="track-page">
+
+        <div class="page-header">
+
+            <div>
+                <p class="tagline">📍 REQUEST TRACKING</p>
+
+                <h1>Track Your Pickup</h1>
+
+                <p>
+                    Follow your e-waste pickup request from submission to recycling.
+                </p>
+            </div>
+
+            <a href="my-requests.html" class="dashboard-add-btn">
+                ← My Requests
+            </a>
+
+        </div>
+
+
+        <!-- Request Search -->
+        <section class="track-search-card">
+
+            <div>
+
+                <h2>Enter Request ID</h2>
+
+                <p>
+                    Enter your pickup request ID to view its current status.
+                </p>
+
+            </div>
+
+
+            <div class="track-search-form">
+
+                <input
+                    type="text"
+                    id="requestIdInput"
+                    placeholder="Example: EW-0001"
+                >
+
+                <button
+                    type="button"
+                    id="trackRequestBtn"
+                    class="login-btn"
+                >
+                    Track Request
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Request Details -->
+        <section class="track-details-card">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Request Details</h2>
+
+                    <p>
+                        Information about your pickup request.
+                    </p>
+                </div>
+
+                <span class="status-badge">
+                    Pending
+                </span>
+
+            </div>
+
+
+            <div class="track-details-grid">
+
+                <div class="detail-row">
+                    <span>Request ID</span>
+                    <strong id="trackRequestId">EW-0001</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>E-Waste Type</span>
+                    <strong id="trackEwasteType">Laptop</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Quantity</span>
+                    <strong id="trackQuantity">1</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Condition</span>
+                    <strong id="trackCondition">Used</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Pickup Date</span>
+                    <strong id="trackPickupDate">Not scheduled</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Collector</span>
+                    <strong id="trackCollector">Not assigned</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Status Timeline -->
+        <section class="track-details-card">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Pickup Status</h2>
+
+                    <p>
+                        Current progress of your e-waste request.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="tracking-timeline">
+
+                <div class="timeline-item active">
+
+                    <div class="timeline-icon">
+                        ✓
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <h3>Pending</h3>
+
+                        <p>
+                            Your pickup request has been submitted.
+                        </p>
+
+                        <span>
+                            Request received
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-icon">
+                        2
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <h3>Assigned</h3>
+
+                        <p>
+                            A collector will be assigned to your request.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-icon">
+                        3
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <h3>Accepted</h3>
+
+                        <p>
+                            The assigned collector has accepted the pickup.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-icon">
+                        4
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <h3>Collected</h3>
+
+                        <p>
+                            Your e-waste has been collected.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-icon">
+                        5
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <h3>Sent for Recycling</h3>
+
+                        <p>
+                            Your e-waste has been delivered to the recycling center.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-icon">
+                        6
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <h3>Recycled</h3>
+
+                        <p>
+                            The e-waste has successfully completed the recycling process.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Recycling Message -->
+        <section class="track-success-card">
+
+            <div class="success-icon">
+                ♻️
+            </div>
+
+            <div>
+
+                <h2>Thank You for Recycling Responsibly</h2>
+
+                <p>
+                    Once your e-waste reaches the recycled stage,
+                    reward points will be added to your account.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 E-Waste Management System
+        </p>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

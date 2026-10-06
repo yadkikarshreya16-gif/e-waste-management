@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Collector Dashboard | E-Waste Management</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+
+        <div class="logo">
+            ♻️ E-Waste
+        </div>
+
+        <div class="nav-links">
+            <a href="collector-dashboard.html">Dashboard</a>
+            <a href="assigned-pickups.html">Assigned Pickups</a>
+            <a href="login.html">Logout</a>
+        </div>
+
+    </nav>
+
+
+    <!-- Collector Dashboard -->
+    <main class="collector-page">
+
+        <div class="page-header">
+
+            <div>
+                <p class="tagline">🚚 COLLECTION MANAGEMENT</p>
+
+                <h1>Collector Dashboard</h1>
+
+                <p>
+                    Manage your assigned e-waste pickup requests.
+                </p>
+            </div>
+
+            <a href="assigned-pickups.html" class="dashboard-add-btn">
+                View Pickups
+            </a>
+
+        </div>
+
+
+        <!-- Statistics -->
+        <section class="collector-stats">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📦
+                </div>
+
+                <div>
+                    <p>Assigned Pickups</p>
+                    <h2 id="assignedPickups">0</h2>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🕒
+                </div>
+
+                <div>
+                    <p>Pending Pickups</p>
+                    <h2 id="pendingPickups">0</h2>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🚚
+                </div>
+
+                <div>
+                    <p>Collected</p>
+                    <h2 id="collectedPickups">0</h2>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ♻️
+                </div>
+
+                <div>
+                    <p>Sent for Recycling</p>
+                    <h2 id="recyclingPickups">0</h2>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Recent Assigned Requests -->
+        <section class="collector-section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Recent Assigned Pickups</h2>
+
+                    <p>
+                        Pickup requests assigned to you.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Request ID</th>
+                            <th>Item</th>
+                            <th>Quantity</th>
+                            <th>Pickup Date</th>
+                            <th>Location</th>
+                            <th>Status</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="collectorPickupTable">
+
+                        <tr>
+                            <td colspan="6" class="empty-state">
+                                No assigned pickups yet.
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- Collector Actions -->
+        <section class="collector-section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Quick Actions</h2>
+
+                    <p>
+                        Common collection management actions.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="action-grid">
+
+                <a href="assigned-pickups.html" class="action-card">
+
+                    <span>📦</span>
+
+                    <div>
+                        <h3>Assigned Pickups</h3>
+                        <p>View all pickup requests assigned to you.</p>
+                    </div>
+
+                </a>
+
+
+                <div class="action-card">
+
+                    <span>🚚</span>
+
+                    <div>
+                        <h3>Update Pickup Status</h3>
+                        <p>Update the collection progress of a request.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="action-card">
+
+                    <span>♻️</span>
+
+                    <div>
+                        <h3>Send for Recycling</h3>
+                        <p>Mark collected e-waste as sent for recycling.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 E-Waste Management System
+        </p>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

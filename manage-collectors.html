@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Manage Collectors | E-Waste Management</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+
+        <div class="logo">
+            ♻️ E-Waste
+        </div>
+
+        <div class="nav-links">
+            <a href="admin-dashboard.html">Dashboard</a>
+            <a href="manage-users.html">Users</a>
+            <a href="manage-collectors.html">Collectors</a>
+            <a href="manage-requests.html">Requests</a>
+            <a href="reports.html">Reports</a>
+            <a href="login.html">Logout</a>
+        </div>
+
+    </nav>
+
+
+    <!-- Manage Collectors -->
+    <main class="admin-page">
+
+        <div class="page-header">
+
+            <div>
+                <p class="tagline">🚚 COLLECTOR MANAGEMENT</p>
+
+                <h1>Manage Collectors</h1>
+
+                <p>
+                    View and manage collectors responsible for e-waste pickup and delivery.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- Collector Statistics -->
+        <section class="admin-stats">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🚚
+                </div>
+
+                <div>
+                    <p>Total Collectors</p>
+                    <h2 id="collectorCount">0</h2>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🟢
+                </div>
+
+                <div>
+                    <p>Active Collectors</p>
+                    <h2 id="activeCollectors">0</h2>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📦
+                </div>
+
+                <div>
+                    <p>Assigned Pickups</p>
+                    <h2 id="assignedPickups">0</h2>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ♻️
+                </div>
+
+                <div>
+                    <p>Completed Pickups</p>
+                    <h2 id="completedPickups">0</h2>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Search and Filter -->
+        <section class="admin-section">
+
+            <div class="admin-toolbar">
+
+                <div class="search-group">
+
+                    <label for="collectorSearch">
+                        Search Collectors
+                    </label>
+
+                    <input
+                        type="search"
+                        id="collectorSearch"
+                        placeholder="Search by name, email or phone"
+                    >
+
+                </div>
+
+
+                <div class="filter-group">
+
+                    <label for="collectorStatusFilter">
+                        Status
+                    </label>
+
+                    <select id="collectorStatusFilter">
+
+                        <option value="all">
+                            All Collectors
+                        </option>
+
+                        <option value="active">
+                            Active
+                        </option>
+
+                        <option value="inactive">
+                            Inactive
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Collectors Table -->
+        <section class="admin-section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Registered Collectors</h2>
+
+                    <p>
+                        Collectors registered in the system.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Collector ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Assigned</th>
+                            <th>Completed</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="collectorsTable">
+
+                        <tr>
+                            <td colspan="8" class="empty-state">
+                                No collectors registered yet.
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 E-Waste Management System
+        </p>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
