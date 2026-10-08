@@ -1,59 +1,62 @@
+const API_BASE_URL = "https://ewaste-management-backend.onrender.com";
+
 const form = document.getElementById("ewasteForm");
 
 if (form) {
     form.addEventListener("submit", async function (event) {
 
-    event.preventDefault();
+        event.preventDefault();
 
-    const ewasteData = {
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        type: document.getElementById("wasteType").value,
-        quantity: parseInt(document.getElementById("quantity").value),
-        condition: document.getElementById("condition").value,
-        location: document.getElementById("location").value,
-        description: document.getElementById("description").value
-    };
+        const ewasteData = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            type: document.getElementById("wasteType").value,
+            quantity: parseInt(document.getElementById("quantity").value),
+            condition: document.getElementById("condition").value,
+            location: document.getElementById("location").value,
+            description: document.getElementById("description").value
+        };
 
-    try {
+        try {
 
-        const response = await fetch(
-            "http://192.168.1.11:8080/api/ewaste",
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(ewasteData)
+            const response = await fetch(
+                `${API_BASE_URL}/api/ewaste`,
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(ewasteData)
+                }
+            );
+
+            if (response.ok) {
+
+                const result = await response.json();
+
+                alert("E-Waste submitted successfully!");
+
+                form.reset();
+
+                console.log(result);
+
+            } else {
+
+                alert("Failed to submit e-waste.");
+
             }
-        );
 
-        if (response.ok) {
+        } catch (error) {
 
-            const result = await response.json();
+            console.error("Error:", error);
 
-            alert("E-Waste submitted successfully!");
-
-            form.reset();
-
-            console.log(result);
-
-        } else {
-
-            alert("Failed to submit e-waste.");
+            alert("Could not connect to the server.");
 
         }
 
-    } catch (error) {
-
-        console.error("Error:", error);
-
-        alert("Could not connect to the server.");
-
-    }
-
-});
+    });
 }
+
 
 // ================= DASHBOARD =================
 
@@ -66,7 +69,7 @@ if (submissionTable) {
         try {
 
             const response = await fetch(
-                "http://192.168.1.11:8080/api/ewaste"
+                `${API_BASE_URL}/api/ewaste`
             );
 
             const data = await response.json();
@@ -139,6 +142,7 @@ if (submissionTable) {
     loadDashboard();
 }
 
+
 // ================= MANAGE REQUESTS =================
 
 const requestsTable = document.getElementById("requestsTable");
@@ -150,7 +154,7 @@ if (requestsTable) {
         try {
 
             const response = await fetch(
-                "http://192.168.1.11:8080/api/ewaste"
+                `${API_BASE_URL}/api/ewaste`
             );
 
             const data = await response.json();
@@ -234,7 +238,6 @@ if (requestsTable) {
 
     }
 
-
     loadRequests();
 
 }
@@ -251,7 +254,7 @@ async function changeStatus(id, status) {
     try {
 
         const response = await fetch(
-            `http://192.168.1.11:8080/api/ewaste/${id}/status?status=${status}`,
+            `${API_BASE_URL}/api/ewaste/${id}/status?status=${status}`,
             {
                 method: "PUT"
             }
@@ -277,4 +280,145 @@ async function changeStatus(id, status) {
 
     }
 
+}
+
+
+// ================= USER REGISTRATION =================
+
+const registerForm = document.getElementById("registerForm");
+
+if (registerForm) {
+
+    registerForm.addEventListener("submit", async function (event) {
+
+        event.preventDefault();
+
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("confirmPassword").value;
+
+        if (password !== confirmPassword) {
+            alert("Passwords do not match.");
+            return;
+        }
+
+        const userData = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            phone: document.getElementById("phone").value,
+            address: document.getElementById("address").value,
+            password: password,
+            role: document.getElementById("role").value
+        };
+
+        try {
+
+            const response = await fetch(
+                `${API_BASE_URL}/api/users/register`,
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(userData)
+                }
+            );
+
+            if (response.ok) {
+
+                alert("Account created successfully!");
+
+                registerForm.reset();
+
+                window.location.href = "login.html";
+
+            } else {
+
+                alert("Registration failed. Email may already be registered.");
+
+            }
+
+        } catch (error) {
+
+            console.error("Registration error:", error);
+
+            alert("Could not connect to the server.");
+
+        }
+
+    });
+}
+
+
+// ================= USER LOGIN =================
+
+const loginForm = document.getElementById("loginForm");
+
+if (loginForm) {
+
+    alert("LOGIN SCRIPT IS RUNNING");
+
+    loginForm.addEventListener("submit", async function (event) {
+
+        event.preventDefault();
+
+        const selectedRole = document.getElementById("role").value;
+
+        const loginData = {
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value
+        };
+
+        try {
+
+            const response = await fetch(
+                `${API_BASE_URL}/api/users/login`,
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(loginData)
+                }
+            );
+
+            if (response.ok) {
+
+                const user = await response.json();
+
+                // Check selected role against the user's actual role
+                if (user.role !== selectedRole) {
+                    alert("Incorrect role selected.");
+                    return;
+                }
+
+                localStorage.setItem("loggedInUser", JSON.stringify(user));
+
+                alert("Login successful!");
+
+                // Redirect based on role
+                if (user.role === "admin") {
+                    window.location.href = "admin-dashboard.html";
+                }
+                else if (user.role === "collector") {
+                    window.location.href = "collector-dashboard.html";
+                }
+                else {
+                    window.location.href = "dashboard.html";
+                }
+
+            } else {
+
+                alert("Invalid email or password.");
+
+            }
+
+        } catch (error) {
+
+            console.error("Login error:", error);
+
+            alert("Could not connect to the server.");
+
+        }
+
+    });
 }
